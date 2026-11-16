@@ -1,0 +1,1 @@
+CPU harness with mocked pin reads: W A S D space mapping, A+space combination, held press edge, joystick up+right normalization, released column directions and all four startup configurations passed. Mocked pins do not emulate physical CIA behaviour.

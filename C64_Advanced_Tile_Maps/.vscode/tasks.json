@@ -1,0 +1,57 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "ACME: Build active example",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "-f",
+        "cbm",
+        "-o",
+        "${workspaceFolder}/build/${fileBasenameNoExtension}.prg",
+        "${file}"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "ACME: Build and run in VICE",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/build/${fileBasenameNoExtension}.prg"
+      ],
+      "dependsOn": "ACME: Build active example",
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "runOptions": {
+        "instanceLimit": 1
+      }
+    }
+  ]
+}

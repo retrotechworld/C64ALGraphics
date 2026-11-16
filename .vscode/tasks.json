@@ -1,0 +1,866 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Before_We_Begin_Project / Development setup",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "--strict-segments",
+        "-f",
+        "cbm",
+        "-o",
+        "build/main.prg",
+        "src/main.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/Before_We_Begin_Project"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Before_We_Begin_Project / Development setup",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-model",
+        "c64",
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/Before_We_Begin_Project/build/main.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/Before_We_Begin_Project"
+      },
+      "dependsOn": "Build Before_We_Begin_Project / Development setup",
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "runOptions": {
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Build C64_Graphics_Modes / 01_standard_text",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "--strict-segments",
+        "-f",
+        "cbm",
+        "-o",
+        "prg/01_standard_text.prg",
+        "source/01_standard_text.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Graphics_Modes"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run C64_Graphics_Modes / 01_standard_text",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-model",
+        "c64",
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/C64_Graphics_Modes/prg/01_standard_text.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Graphics_Modes"
+      },
+      "dependsOn": "Build C64_Graphics_Modes / 01_standard_text",
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "runOptions": {
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Build C64_Graphics_Modes / 02_multicolour_text",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "--strict-segments",
+        "-f",
+        "cbm",
+        "-o",
+        "prg/02_multicolour_text.prg",
+        "source/02_multicolour_text.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Graphics_Modes"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run C64_Graphics_Modes / 02_multicolour_text",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-model",
+        "c64",
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/C64_Graphics_Modes/prg/02_multicolour_text.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Graphics_Modes"
+      },
+      "dependsOn": "Build C64_Graphics_Modes / 02_multicolour_text",
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "runOptions": {
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Build C64_Graphics_Modes / 03_extended_text",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "--strict-segments",
+        "-f",
+        "cbm",
+        "-o",
+        "prg/03_extended_text.prg",
+        "source/03_extended_text.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Graphics_Modes"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run C64_Graphics_Modes / 03_extended_text",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-model",
+        "c64",
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/C64_Graphics_Modes/prg/03_extended_text.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Graphics_Modes"
+      },
+      "dependsOn": "Build C64_Graphics_Modes / 03_extended_text",
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "runOptions": {
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Build C64_Graphics_Modes / 04_hires_bitmap",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "--strict-segments",
+        "-f",
+        "cbm",
+        "-o",
+        "prg/04_hires_bitmap.prg",
+        "source/04_hires_bitmap.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Graphics_Modes"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run C64_Graphics_Modes / 04_hires_bitmap",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-model",
+        "c64",
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/C64_Graphics_Modes/prg/04_hires_bitmap.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Graphics_Modes"
+      },
+      "dependsOn": "Build C64_Graphics_Modes / 04_hires_bitmap",
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "runOptions": {
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Build C64_Graphics_Modes / 05_multicolour_bitmap",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "--strict-segments",
+        "-f",
+        "cbm",
+        "-o",
+        "prg/05_multicolour_bitmap.prg",
+        "source/05_multicolour_bitmap.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Graphics_Modes"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run C64_Graphics_Modes / 05_multicolour_bitmap",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-model",
+        "c64",
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/C64_Graphics_Modes/prg/05_multicolour_bitmap.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Graphics_Modes"
+      },
+      "dependsOn": "Build C64_Graphics_Modes / 05_multicolour_bitmap",
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "runOptions": {
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Build C64_Graphics_Modes / 06_sprites",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "--strict-segments",
+        "-f",
+        "cbm",
+        "-o",
+        "prg/06_sprites.prg",
+        "source/06_sprites.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Graphics_Modes"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run C64_Graphics_Modes / 06_sprites",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-model",
+        "c64",
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/C64_Graphics_Modes/prg/06_sprites.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Graphics_Modes"
+      },
+      "dependsOn": "Build C64_Graphics_Modes / 06_sprites",
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "runOptions": {
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Build C64_Advanced_Tile_Maps / 01_hires_platform",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "--strict-segments",
+        "-f",
+        "cbm",
+        "-o",
+        "build/01_hires_platform.prg",
+        "source/01_hires_platform.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Advanced_Tile_Maps"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run C64_Advanced_Tile_Maps / 01_hires_platform",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-model",
+        "c64",
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/C64_Advanced_Tile_Maps/build/01_hires_platform.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Advanced_Tile_Maps"
+      },
+      "dependsOn": "Build C64_Advanced_Tile_Maps / 01_hires_platform",
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "runOptions": {
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Build C64_Advanced_Tile_Maps / 02_mixed_platform",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "--strict-segments",
+        "-f",
+        "cbm",
+        "-o",
+        "build/02_mixed_platform.prg",
+        "source/02_mixed_platform.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Advanced_Tile_Maps"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run C64_Advanced_Tile_Maps / 02_mixed_platform",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-model",
+        "c64",
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/C64_Advanced_Tile_Maps/build/02_mixed_platform.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Advanced_Tile_Maps"
+      },
+      "dependsOn": "Build C64_Advanced_Tile_Maps / 02_mixed_platform",
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "runOptions": {
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Build C64_Advanced_Tile_Maps / 03_horizontal_world",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "--strict-segments",
+        "-f",
+        "cbm",
+        "-o",
+        "build/03_horizontal_world.prg",
+        "source/03_horizontal_world.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Advanced_Tile_Maps"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run C64_Advanced_Tile_Maps / 03_horizontal_world",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-model",
+        "c64",
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/C64_Advanced_Tile_Maps/build/03_horizontal_world.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Advanced_Tile_Maps"
+      },
+      "dependsOn": "Build C64_Advanced_Tile_Maps / 03_horizontal_world",
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "runOptions": {
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Build C64_Input_and_Movement / 00_kernal_text",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "--strict-segments",
+        "-f",
+        "cbm",
+        "-o",
+        "build/00_kernal_text.prg",
+        "source/00_kernal_text.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Input_and_Movement"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run C64_Input_and_Movement / 00_kernal_text",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-model",
+        "c64",
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/C64_Input_and_Movement/build/00_kernal_text.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Input_and_Movement"
+      },
+      "dependsOn": "Build C64_Input_and_Movement / 00_kernal_text",
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "runOptions": {
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Build C64_Input_and_Movement / 01_direct_input",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "--strict-segments",
+        "-f",
+        "cbm",
+        "-o",
+        "build/01_direct_input.prg",
+        "source/01_direct_input.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Input_and_Movement"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run C64_Input_and_Movement / 01_direct_input",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-model",
+        "c64",
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/C64_Input_and_Movement/build/01_direct_input.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Input_and_Movement"
+      },
+      "dependsOn": "Build C64_Input_and_Movement / 01_direct_input",
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "runOptions": {
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Build C64_Input_and_Movement / 02_fixed_jump",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "--strict-segments",
+        "-f",
+        "cbm",
+        "-o",
+        "build/02_fixed_jump.prg",
+        "source/02_fixed_jump.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Input_and_Movement"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run C64_Input_and_Movement / 02_fixed_jump",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-model",
+        "c64",
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/C64_Input_and_Movement/build/02_fixed_jump.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Input_and_Movement"
+      },
+      "dependsOn": "Build C64_Input_and_Movement / 02_fixed_jump",
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "runOptions": {
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Build C64_Input_and_Movement / 03_variable_jump",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "--strict-segments",
+        "-f",
+        "cbm",
+        "-o",
+        "build/03_variable_jump.prg",
+        "source/03_variable_jump.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Input_and_Movement"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run C64_Input_and_Movement / 03_variable_jump",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-model",
+        "c64",
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/C64_Input_and_Movement/build/03_variable_jump.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Input_and_Movement"
+      },
+      "dependsOn": "Build C64_Input_and_Movement / 03_variable_jump",
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "runOptions": {
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Build C64_Input_and_Movement / 04_spaceship",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "--strict-segments",
+        "-f",
+        "cbm",
+        "-o",
+        "build/04_spaceship.prg",
+        "source/04_spaceship.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Input_and_Movement"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run C64_Input_and_Movement / 04_spaceship",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-model",
+        "c64",
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/C64_Input_and_Movement/build/04_spaceship.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/C64_Input_and_Movement"
+      },
+      "dependsOn": "Build C64_Input_and_Movement / 04_spaceship",
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "runOptions": {
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Build beastlands-advanced / Woodland parallax",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "--strict-segments",
+        "-f",
+        "cbm",
+        "-o",
+        "beastlands.prg",
+        "beastlands.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/beastlands-advanced"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run beastlands-advanced / Woodland parallax",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-model",
+        "c64",
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/beastlands-advanced/beastlands.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/beastlands-advanced"
+      },
+      "dependsOn": "Build beastlands-advanced / Woodland parallax",
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "runOptions": {
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Build Sound_Integration / Music and effect calls",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "--strict-segments",
+        "-f",
+        "cbm",
+        "-o",
+        "sound_calls.prg",
+        "sound_calls.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/Sound_Integration"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Sound_Integration / Music and effect calls",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-model",
+        "c64",
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/Sound_Integration/sound_calls.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/Sound_Integration"
+      },
+      "dependsOn": "Build Sound_Integration / Music and effect calls",
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "runOptions": {
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Build all examples",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Build Before_We_Begin_Project / Development setup",
+        "Build C64_Graphics_Modes / 01_standard_text",
+        "Build C64_Graphics_Modes / 02_multicolour_text",
+        "Build C64_Graphics_Modes / 03_extended_text",
+        "Build C64_Graphics_Modes / 04_hires_bitmap",
+        "Build C64_Graphics_Modes / 05_multicolour_bitmap",
+        "Build C64_Graphics_Modes / 06_sprites",
+        "Build C64_Advanced_Tile_Maps / 01_hires_platform",
+        "Build C64_Advanced_Tile_Maps / 02_mixed_platform",
+        "Build C64_Advanced_Tile_Maps / 03_horizontal_world",
+        "Build C64_Input_and_Movement / 00_kernal_text",
+        "Build C64_Input_and_Movement / 01_direct_input",
+        "Build C64_Input_and_Movement / 02_fixed_jump",
+        "Build C64_Input_and_Movement / 03_variable_jump",
+        "Build C64_Input_and_Movement / 04_spaceship",
+        "Build beastlands-advanced / Woodland parallax",
+        "Build Sound_Integration / Music and effect calls"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+ACME AND VICE QUICK START
+
+Requirements: a text editor, ACME and VICE x64sc. VS Code is optional but
+provides the included one-action build and launch workflow.
+No Python, shell scripts, batch files, PowerShell scripts, make or asset
+converters are required. The supplied programs contain their graphics data
+as ACME assembly directives.
+
+VS CODE SETUP
+1. Extract the complete ZIP first. Open the C64_Graphics_Modes folder using
+   File > Open Folder, or open C64_Graphics_Modes.code-workspace.
+2. Install ACME and VICE separately. Their executables must be discoverable
+   by VS Code, normally through PATH. Restart VS Code after changing PATH.
+3. On Windows the tasks invoke acme.exe and x64sc.exe. On macOS/Linux they
+   invoke acme and x64sc. If either executable cannot be found, open
+   .vscode/tasks.json and replace its command values with your installed
+   executable's full path. Windows command entries override the base command.
+   For Windows JSON paths, use forward slashes, for example
+   C:/Tools/ACME/acme.exe and C:/Tools/VICE/bin/x64sc.exe.
+   These are examples: use the actual installed locations.
+4. Open one of the six source/*.asm files and save it.
+5. Press Ctrl+Shift+B on Windows/Linux, or Cmd+Shift+B on macOS.
+   The default task builds the active .asm file with ACME and, only after
+   successful completion, launches VICE with the resulting PRG.
+   The output is prg/<source-name>.prg. Keep the supplied prg folder.
+6. Close VICE before starting the same run task again. Reset or close VICE
+   to leave these standalone demos. Save your .asm changes before rebuilding.
+
+OTHER TASKS
+Terminal > Run Task > C64 Build active assembly file: assemble only.
+Terminal > Run Task > C64 Run <example-name>: build and run a fixed example;
+this works even when the guide or README is the active editor tab.
+Terminal > Run Task > C64 Build all six examples: assemble every example.
+The active-file default task requires an .asm file as the active editor tab.
+
+HOW THE AUTOMATION WORKS
+Each executable task uses VS Code type process. ACME and x64sc are launched
+directly, with arguments in JSON arrays. VS Code dependency tasks order the
+build before VICE; there is no command chaining or interpreter in the task.
+VICE uses -autostartprgmode 1 and -autostart to load the PRG into RAM and run it.
+This is build-and-run automation, not F5 source-level debugging; no debugger
+extension is required. A syntax-highlighting extension is optional.
+
+USING ANOTHER TEXT EDITOR
+Each .asm is a complete standalone ACME program. Configure the editor's
+external-tool action to invoke the ACME executable directly with the CBM
+output format, output PRG filename and source filename. Open the resulting
+PRG using VICE File > Autostart disk/tape image. There is no separate generation
+stage or support script. The reference also shows direct ACME invocations.
+
+VALIDATION
+All six sources were rebuilt using ACME during this update. Their rebuilt
+PRGs match the previous binaries byte for byte. The task JSON and dependency
+references were checked. VS Code launching on your Windows/macOS machine,
+VICE display behaviour and physical C64 operation remain to be checked there.
+
+References:
+https://code.visualstudio.com/docs/debugtest/tasks
+https://vice-emu.sourceforge.io/vice_2.html
+https://vice-emu.sourceforge.io/vice_6.html

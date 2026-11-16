@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "ACME Build Parallax",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "--strict-segments",
+        "-f",
+        "cbm",
+        "-o",
+        "beastlands.prg",
+        "-l",
+        "labels.txt",
+        "beastlands.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}

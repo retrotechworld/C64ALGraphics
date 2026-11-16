@@ -1,0 +1,365 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "C64 Build active assembly file",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "-f",
+        "cbm",
+        "-o",
+        "${workspaceFolder}/prg/${fileBasenameNoExtension}.prg",
+        "${file}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "C64 Build and run active assembly file",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/prg/${fileBasenameNoExtension}.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": false
+      },
+      "dependsOn": "C64 Build active assembly file",
+      "dependsOrder": "sequence",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "C64 Build 01_standard_text",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "-f",
+        "cbm",
+        "-o",
+        "${workspaceFolder}/prg/01_standard_text.prg",
+        "${workspaceFolder}/source/01_standard_text.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "C64 Run 01_standard_text",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/prg/01_standard_text.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": false
+      },
+      "dependsOn": "C64 Build 01_standard_text",
+      "dependsOrder": "sequence"
+    },
+    {
+      "label": "C64 Build 02_multicolour_text",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "-f",
+        "cbm",
+        "-o",
+        "${workspaceFolder}/prg/02_multicolour_text.prg",
+        "${workspaceFolder}/source/02_multicolour_text.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "C64 Run 02_multicolour_text",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/prg/02_multicolour_text.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": false
+      },
+      "dependsOn": "C64 Build 02_multicolour_text",
+      "dependsOrder": "sequence"
+    },
+    {
+      "label": "C64 Build 03_extended_text",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "-f",
+        "cbm",
+        "-o",
+        "${workspaceFolder}/prg/03_extended_text.prg",
+        "${workspaceFolder}/source/03_extended_text.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "C64 Run 03_extended_text",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/prg/03_extended_text.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": false
+      },
+      "dependsOn": "C64 Build 03_extended_text",
+      "dependsOrder": "sequence"
+    },
+    {
+      "label": "C64 Build 04_hires_bitmap",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "-f",
+        "cbm",
+        "-o",
+        "${workspaceFolder}/prg/04_hires_bitmap.prg",
+        "${workspaceFolder}/source/04_hires_bitmap.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "C64 Run 04_hires_bitmap",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/prg/04_hires_bitmap.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": false
+      },
+      "dependsOn": "C64 Build 04_hires_bitmap",
+      "dependsOrder": "sequence"
+    },
+    {
+      "label": "C64 Build 05_multicolour_bitmap",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "-f",
+        "cbm",
+        "-o",
+        "${workspaceFolder}/prg/05_multicolour_bitmap.prg",
+        "${workspaceFolder}/source/05_multicolour_bitmap.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "C64 Run 05_multicolour_bitmap",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/prg/05_multicolour_bitmap.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": false
+      },
+      "dependsOn": "C64 Build 05_multicolour_bitmap",
+      "dependsOrder": "sequence"
+    },
+    {
+      "label": "C64 Build 06_sprites",
+      "type": "process",
+      "command": "acme",
+      "windows": {
+        "command": "acme.exe"
+      },
+      "args": [
+        "-f",
+        "cbm",
+        "-o",
+        "${workspaceFolder}/prg/06_sprites.prg",
+        "${workspaceFolder}/source/06_sprites.asm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "C64 Run 06_sprites",
+      "type": "process",
+      "command": "x64sc",
+      "windows": {
+        "command": "x64sc.exe"
+      },
+      "args": [
+        "-autostartprgmode",
+        "1",
+        "-autostart",
+        "${workspaceFolder}/prg/06_sprites.prg"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": false
+      },
+      "dependsOn": "C64 Build 06_sprites",
+      "dependsOrder": "sequence"
+    },
+    {
+      "label": "C64 Build all six examples",
+      "dependsOn": [
+        "C64 Build 01_standard_text",
+        "C64 Build 02_multicolour_text",
+        "C64 Build 03_extended_text",
+        "C64 Build 04_hires_bitmap",
+        "C64 Build 05_multicolour_bitmap",
+        "C64 Build 06_sprites"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    }
+  ]
+}
